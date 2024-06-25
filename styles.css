@@ -210,12 +210,15 @@ p {
     color: #e0e1dd;
     /* Off-white color for close button */
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 28px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s;
+    margin-top: -20px;
+    /* Adjust margin to position above the image */
 }
 
 .close:hover,
