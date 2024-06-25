@@ -30,3 +30,17 @@ function updateCart() {
         cartItemsContainer.appendChild(cartItem);
     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const productsContainer = document.querySelector('.products-container');
+
+    // Ensure smooth scrolling
+    productsContainer.addEventListener('wheel', (evt) => {
+        evt.preventDefault();
+        productsContainer.scrollLeft += evt.deltaY * 0.3; // Adjust scrolling speed
+    });
+
+    // Scroll to the start
+    productsContainer.scrollLeft = 0;
+});
+
