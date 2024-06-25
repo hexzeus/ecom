@@ -3,8 +3,10 @@ body {
     font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #000000 25%, #333333 75%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #0d1b2a 25%, #1b263b 75%);
+    /* Dark blue gradient */
+    color: #e0e1dd;
+    /* Off-white color for text */
     line-height: 1.6;
     overflow-x: hidden;
     display: flex;
@@ -16,7 +18,7 @@ body {
 
 /* Luxury Styling for Links */
 a {
-    color: #d4af37;
+    color: #ffd700;
     /* Gold color for luxury */
     text-decoration: none;
     font-weight: bold;
@@ -24,7 +26,8 @@ a {
 }
 
 a:hover {
-    color: #ffffff;
+    color: #e0e1dd;
+    /* Off-white color on hover */
     text-decoration: underline;
 }
 
@@ -32,7 +35,8 @@ a:hover {
 p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #cccccc;
+    color: #c0c0c0;
+    /* Light grey for a softer look */
     font-style: italic;
     /* Adds a touch of elegance */
     letter-spacing: 0.5px;
@@ -64,12 +68,14 @@ p {
 }
 
 .product-wrapper {
-    background-color: #1a1a1a;
+    background-color: #102542;
+    /* Darker blue */
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
     width: 250px;
-    border: 1px solid #4d4d4d;
+    border: 1px solid #314e75;
+    /* Mid-tone blue for borders */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -86,7 +92,8 @@ p {
     margin: 0 0 20px 0;
     cursor: pointer;
     border-radius: 10px;
-    border: 1px solid #4d4d4d;
+    border: 1px solid #314e75;
+    /* Mid-tone blue for borders */
 }
 
 .product h3,
@@ -97,8 +104,10 @@ p {
 .price {
     font-size: 1.4em;
     font-weight: bold;
-    color: #ffffff;
-    background-color: #4d4d4d;
+    color: #ffd700;
+    /* Gold color for price */
+    background-color: #314e75;
+    /* Mid-tone blue */
     text-align: center;
     padding: 10px 0;
     margin: 20px 0 0 0;
@@ -121,8 +130,8 @@ p {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Slightly darker background for added luxury */
+    background-color: rgba(13, 27, 42, 0.8);
+    /* Darker blue with transparency */
     justify-content: center;
     align-items: center;
     display: flex;
@@ -131,21 +140,26 @@ p {
 }
 
 .modal-content {
-    background-color: #1a1a1a;
+    background-color: #102542;
+    /* Darker blue */
     margin: 5% auto;
     padding: 20px 40px;
-    border: 2px solid #4d4d4d;
+    border: 2px solid #314e75;
+    /* Mid-tone blue for borders */
     width: 80%;
     max-width: 600px;
     border-radius: 20px;
     text-align: center;
-    color: #ffffff;
+    color: #e0e1dd;
+    /* Off-white color for text */
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     max-height: 90vh;
     overflow-y: auto;
+    position: relative;
+    /* Ensure close button is positioned correctly */
 }
 
 .modal-content img {
@@ -156,20 +170,23 @@ p {
     display: block;
     margin: 0 auto 20px auto;
     border-radius: 20px;
-    border: 2px solid #4d4d4d;
+    border: 2px solid #314e75;
+    /* Mid-tone blue for borders */
 }
 
 .modal-content h3 {
     font-size: 2em;
     /* Slightly larger font for headings */
     margin-bottom: 10px;
-    color: #ffffff;
+    color: #ffd700;
+    /* Gold color for headings */
 }
 
 .modal-content p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #cccccc;
+    color: #c0c0c0;
+    /* Light grey for a softer look */
     text-align: left;
     font-style: italic;
     /* Adds a touch of elegance */
@@ -179,7 +196,8 @@ p {
 .modal-content .price {
     font-size: 1.5em;
     font-weight: bold;
-    color: #ffffff;
+    color: #ffd700;
+    /* Gold color for price */
     margin-bottom: 20px;
     background-color: transparent;
     width: auto;
@@ -188,10 +206,11 @@ p {
 }
 
 .close {
-    color: #ffffff;
+    color: #e0e1dd;
+    /* Off-white color for close button */
     position: absolute;
     top: 20px;
-    right: 40px;
+    right: 20px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -200,7 +219,7 @@ p {
 
 .close:hover,
 .close:focus {
-    color: #d4af37;
+    color: #ffd700;
     /* Gold color on hover for the close button */
     text-decoration: none;
 }
@@ -224,7 +243,7 @@ p {
 
 .phone a,
 .email a {
-    color: #d4af37;
+    color: #ffd700;
     /* Gold color for links */
     text-decoration: none;
     transition: color 0.3s, text-decoration 0.3s;
@@ -232,7 +251,8 @@ p {
 
 .phone a:hover,
 .email a:hover {
-    color: #ffffff;
+    color: #e0e1dd;
+    /* Off-white color on hover */
     text-decoration: underline;
 }
 
@@ -245,17 +265,20 @@ p {
 .social-link {
     display: inline-block;
     padding: 10px 20px;
-    color: #ffffff;
-    background-color: #4d4d4d;
+    color: #e0e1dd;
+    /* Off-white color for social links */
+    background-color: #314e75;
+    /* Mid-tone blue for background */
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .social-link:hover {
-    background-color: #d4af37;
-    color: #000000;
-    /* Black color on hover for a striking contrast */
+    background-color: #ffd700;
+    /* Gold color on hover */
+    color: #102542;
+    /* Darker blue for text on hover */
 }
 
 /* Responsive Design */

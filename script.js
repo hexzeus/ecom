@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const modalPrice = document.getElementById('modal-price');
+    const modalContactDetails = document.getElementById('modal-contact-details');
     const closeBtn = document.getElementsByClassName('close')[0];
 
     document.querySelectorAll('.product-img').forEach(img => {
@@ -119,6 +120,12 @@ document.addEventListener('DOMContentLoaded', function () {
             modalTitle.innerText = title;
             modalDescription.innerText = description;
             modalPrice.innerText = price;
+
+            if (title === 'Contact') {
+                modalContactDetails.style.display = 'block';
+            } else {
+                modalContactDetails.style.display = 'none';
+            }
         });
     });
 
