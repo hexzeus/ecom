@@ -49,12 +49,7 @@ body {
     text-overflow: ellipsis;
 }
 
-.nav-item .contact-button:hover+.dropdown,
-.nav-item .dropdown:hover {
-    display: block;
-}
-
-.dropdown {
+.nav-item .dropdown {
     display: none;
     position: absolute;
     right: 0;
@@ -64,6 +59,10 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     min-width: 150px;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
 }
 
 .dropdown a {
