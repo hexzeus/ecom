@@ -37,7 +37,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     margin: 0 10px;
-    width: 300px;
+    width: 250px;
+    /* Adjust width for smaller screens */
     border: 2px solid #00338D;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #00338D;
@@ -49,8 +50,9 @@ body {
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     display: block;
     margin: 0 auto 10px auto;
     border-radius: 10px;
@@ -123,7 +125,7 @@ body {
     border: 1px solid #00338D;
     /* Buffalo Bills Blue */
     width: 80%;
-    max-width: 600px;
+    max-width: 500px;
     /* Increased width for a better view */
     border-radius: 15px;
     /* Slightly more rounded corners for a modern look */
@@ -138,7 +140,8 @@ body {
 
 .modal-content img {
     max-width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     display: block;
     margin: 0 auto 20px auto;
     border-radius: 15px;
@@ -190,11 +193,33 @@ body {
     .products-container {
         flex-direction: row;
     }
+
+    .product {
+        width: 200px;
+        /* Smaller width for mobile screens */
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+        /* Smaller width for mobile screens */
+    }
 }
 
 @media (min-width: 768px) {
     .products-container {
         justify-content: center;
+    }
+
+    .product {
+        width: 250px;
+        /* Medium width for tablets */
+    }
+
+    .modal-content {
+        width: 80%;
+        max-width: 500px;
+        /* Medium width for tablets */
     }
 }
 
@@ -204,6 +229,13 @@ body {
     }
 
     .product {
-        min-width: 300px;
+        width: 300px;
+        /* Original width for larger screens */
+    }
+
+    .modal-content {
+        width: 70%;
+        max-width: 600px;
+        /* Original width for larger screens */
     }
 }
