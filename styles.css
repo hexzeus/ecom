@@ -66,9 +66,20 @@ body {
 .product .price {
     font-size: 1.2em;
     font-weight: bold;
-    color: #00338D;
+    color: #ffffff;
+    background-color: #00338D;
+    border-radius: 15px;
     text-align: center;
-    margin-top: 10px;
+    padding: 5px 10px;
+    margin: 10px auto 0 auto;
+    display: inline-block;
+    width: 80px;
+    transition: background-color 0.3s;
+}
+
+.product .price:hover {
+    background-color: #C60C30;
+    cursor: pointer;
 }
 
 .product:hover {
