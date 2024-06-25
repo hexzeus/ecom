@@ -105,7 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const modalPrice = document.getElementById('modal-price');
-    const closeBtn = document.getElementsByClassName('close')[0];
+    const buyNowModal = document.getElementById('buy-now-modal');
+    const closeBtns = document.querySelectorAll('.close');
 
     document.querySelectorAll('.product-img').forEach(img => {
         img.addEventListener('click', function () {
@@ -122,20 +123,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    closeBtn.addEventListener('click', function () {
-        modal.style.display = 'none';
+    document.querySelectorAll('.buy-now').forEach(button => {
+        button.addEventListener('click', function () {
+            modal.style.display = 'none';
+            buyNowModal.style.display = 'flex';
+        });
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            modal.style.display = 'none';
+            buyNowModal.style.display = 'none';
+        });
     });
 
     window.addEventListener('click', function (event) {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
+        if (event.target === buyNowModal) {
+            buyNowModal.style.display = 'none';
+        }
     });
 
-    // Ensure modal is hidden and empty on load
+    // Ensure modals are hidden and empty on load
     modal.style.display = 'none';
     modalImg.src = '';
     modalTitle.innerText = '';
     modalDescription.innerText = '';
     modalPrice.innerText = '';
+
+    buyNowModal.style.display = 'none';
 });
