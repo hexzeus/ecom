@@ -37,23 +37,32 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     margin: 0 10px;
-    padding: 20px;
+    width: 300px;
     border: 2px solid #00338D;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #00338D;
-    max-width: 350px;
-    /* Add a max-width to ensure consistency */
     flex-shrink: 0;
-    /* Prevent shrinking */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .product img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 10px auto;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.product-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 .product h3 {
@@ -65,13 +74,12 @@ body {
 
 .product .description {
     font-size: 1em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #555555;
     line-height: 1.4;
     text-align: left;
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    /* Number of lines to show before truncating */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -82,6 +90,7 @@ body {
     font-weight: bold;
     color: #00338D;
     text-align: center;
+    margin-top: 10px;
 }
 
 .product:hover {
