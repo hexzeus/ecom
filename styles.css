@@ -27,28 +27,6 @@ nav .logo {
     color: #ffd700;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffd700;
-}
-
 /* Section */
 section {
     padding: 40px 20px;
@@ -84,16 +62,15 @@ h3 {
 /* Products Carousel */
 .products-container {
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    padding-left: 70px;
-    /* Add padding to the left */
-    margin-left: -70px;
-    /* Adjust margin to ensure full visibility */
-    scroll-behavior: smooth;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
 }
 
 .product {
+    display: inline-block;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -103,7 +80,6 @@ h3 {
     padding: 20px;
     min-width: 250px;
     max-width: 300px;
-    flex: 0 0 auto;
     border: 1px solid #ccc;
 }
 
@@ -126,11 +102,6 @@ h3 {
 .product:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Cart Items */
-#cart-items {
-    margin: 40px 0;
 }
 
 /* Responsive Design */
