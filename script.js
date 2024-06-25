@@ -105,27 +105,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const modalPrice = document.getElementById('modal-price');
-    const modalContactDetails = document.getElementById('modal-contact-details');
     const closeBtn = document.getElementsByClassName('close')[0];
 
-    document.querySelectorAll('.product-img').forEach(img => {
-        img.addEventListener('click', function () {
-            const product = img.closest('.product');
-            const title = product.querySelector('h3').innerText;
-            const description = product.querySelector('.description').innerText;
-            const price = product.querySelector('.price').innerText;
+    function openModal(product) {
+        const title = product.querySelector('h3').innerText;
+        const description = product.querySelector('.description').innerText;
+        const price = product.querySelector('.price').innerText;
 
-            modal.style.display = 'flex';
-            modalImg.src = img.src;
-            modalTitle.innerText = title;
-            modalDescription.innerText = description;
-            modalPrice.innerText = price;
+        modal.style.display = 'flex';
+        modalImg.src = product.querySelector('.product-img').src;
+        modalTitle.innerText = title;
+        modalDescription.innerText = description;
+        modalPrice.innerText = price;
+    }
 
-            if (title === 'Contact') {
-                modalContactDetails.style.display = 'block';
-            } else {
-                modalContactDetails.style.display = 'none';
-            }
+    document.querySelectorAll('.product-img, .price').forEach(element => {
+        element.addEventListener('click', function () {
+            const product = element.closest('.product');
+            openModal(product);
         });
     });
 

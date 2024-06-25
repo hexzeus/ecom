@@ -113,6 +113,7 @@ p {
     margin: 20px 0 0 0;
     width: 100%;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .product:hover .product-wrapper {
