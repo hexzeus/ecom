@@ -138,4 +138,32 @@ document.addEventListener('DOMContentLoaded', function () {
     modalTitle.innerText = '';
     modalDescription.innerText = '';
     modalPrice.innerText = '';
+
+    // Dropdown Functionality
+    const contactButton = document.querySelector('.contact-button');
+    const dropdown = document.querySelector('.dropdown');
+
+    contactButton.addEventListener('mouseover', () => {
+        dropdown.style.display = 'block';
+    });
+
+    contactButton.addEventListener('mouseout', () => {
+        setTimeout(() => {
+            if (!dropdown.matches(':hover')) {
+                dropdown.style.display = 'none';
+            }
+        }, 300);
+    });
+
+    dropdown.addEventListener('mouseover', () => {
+        dropdown.style.display = 'block';
+    });
+
+    dropdown.addEventListener('mouseout', () => {
+        setTimeout(() => {
+            if (!contactButton.matches(':hover')) {
+                dropdown.style.display = 'none';
+            }
+        }, 300);
+    });
 });
