@@ -72,7 +72,7 @@ p {
     /* Deep black */
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     width: 250px;
     border: 1px solid #555555;
     /* Mid-tone grey for borders */
@@ -92,8 +92,16 @@ p {
     margin: 0 0 20px 0;
     cursor: pointer;
     border-radius: 10px;
-    border: 1px solid #555555;
-    /* Mid-tone grey for borders */
+    border: 3px solid #ffcc00;
+    /* Bright gold border to make the image stand out */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.5);
+    /* Soft gold glow on hover */
 }
 
 .product h3,
@@ -119,6 +127,8 @@ p {
 .product:hover .product-wrapper {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+    background-color: #333333;
+    /* Slightly lighter background on hover */
 }
 
 /* Modal Styles */
