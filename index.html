@@ -13,29 +13,48 @@
     <!-- Products Section -->
     <section id="products">
         <div class="products-container">
-            <div class="product" data-id="1" data-name="Product 1" data-price="19.99">
-                <img src="images/product1.jpg" alt="Product 1">
+            <div class="product" data-id="1">
+                <img src="images/product1.jpg" alt="Product 1" class="product-img">
                 <h3>Product 1</h3>
-                <p>$19.99</p>
+                <p class="description">A high-quality Buffalo Bills jersey made from premium materials. Perfect for any
+                    fan looking to support their team in style.</p>
+                <div class="price">$19.99</div>
             </div>
-            <div class="product" data-id="2" data-name="Product 2" data-price="29.99">
-                <img src="images/product2.jpg" alt="Product 2">
+            <div class="product" data-id="2">
+                <img src="images/product2.jpg" alt="Product 2" class="product-img">
                 <h3>Product 2</h3>
-                <p>$29.99</p>
+                <p class="description">Stay warm and comfortable with this stylish Buffalo Bills hoodie. Features the
+                    team's logo and colors.</p>
+                <div class="price">$29.99</div>
             </div>
-            <div class="product" data-id="3" data-name="Product 3" data-price="39.99">
-                <img src="images/product3.jpg" alt="Product 3">
+            <div class="product" data-id="3">
+                <img src="images/product3.jpg" alt="Product 3" class="product-img">
                 <h3>Product 3</h3>
-                <p>$39.99</p>
+                <p class="description">A sleek Buffalo Bills cap to show off your team pride. Adjustable fit for maximum
+                    comfort.</p>
+                <div class="price">$39.99</div>
             </div>
-            <div class="product" data-id="4" data-name="Product 4" data-price="49.99">
-                <img src="images/product4.jpg" alt="Product 4">
+            <div class="product" data-id="4">
+                <img src="images/product4.jpg" alt="Product 4" class="product-img">
                 <h3>Product 4</h3>
-                <p>$49.99</p>
+                <p class="description">Buffalo Bills scarf to keep you warm during the cold games. Soft and cozy with
+                    team colors and logo.</p>
+                <div class="price">$49.99</div>
             </div>
             <!-- Add more products as needed -->
         </div>
     </section>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="Product Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <div id="modal-price" class="price"></div>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>

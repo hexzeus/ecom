@@ -5,16 +5,13 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #00338D 25%, #C60C30 75%);
     color: #ffffff;
-    /* White text for contrast */
     line-height: 1.6;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
-    /* Center vertically */
     height: 100vh;
-    /* Full viewport height */
+    flex-direction: column;
 }
 
 /* Products Carousel */
@@ -28,56 +25,118 @@ body {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
-    position: relative;
     max-width: 1200px;
-    /* Set maximum width */
     justify-content: center;
-    /* Center the carousel horizontally */
-    align-items: center;
-    /* Center the items vertically */
+    padding: 20px 0;
 }
 
 .product {
     display: inline-block;
     background-color: #ffffff;
-    /* White background for contrast */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     margin: 0 10px;
     padding: 20px;
-    min-width: 250px;
-    max-width: 300px;
     border: 2px solid #00338D;
-    /* Buffalo Bills Blue */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #00338D;
+    max-width: 350px;
+    /* Add a max-width to ensure consistency */
+    flex-shrink: 0;
+    /* Prevent shrinking */
 }
 
 .product img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: auto;
-    border-bottom: 2px solid #C60C30;
-    /* Buffalo Bills Red */
-    padding-bottom: 10px;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .product h3 {
     margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.4em;
     color: #C60C30;
-    /* Buffalo Bills Red */
+    text-align: center;
 }
 
-.product p {
+.product .description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555555;
+    line-height: 1.4;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Number of lines to show before truncating */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product .price {
+    font-size: 1.2em;
+    font-weight: bold;
     color: #00338D;
-    /* Buffalo Bills Blue */
+    text-align: center;
 }
 
 .product:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    color: #00338D;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Responsive Design */
@@ -99,6 +158,6 @@ body {
     }
 
     .product {
-        min-width: 250px;
+        min-width: 300px;
     }
 }

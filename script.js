@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Carousel Scrolling Functionality
     const productsContainer = document.querySelector('.products-container');
     const products = Array.from(document.querySelectorAll('.product'));
     let totalWidth = 0;
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     let scrollPosition = 0;
-    let scrollSpeed = 1; // Control the speed of scrolling
+    const scrollSpeed = 1; // Control the speed of scrolling
 
     function scrollProducts() {
         scrollPosition += scrollSpeed;
@@ -74,4 +75,44 @@ document.addEventListener('DOMContentLoaded', function () {
         isDragging = false;
         scrollSpeed = 1; // Resume the automatic scroll
     });
+
+    // Modal Functionality
+    const modal = document.getElementById('product-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalPrice = document.getElementById('modal-price');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    document.querySelectorAll('.product-img').forEach(img => {
+        img.addEventListener('click', function () {
+            const product = img.closest('.product');
+            const title = product.querySelector('h3').innerText;
+            const description = product.querySelector('.description').innerText;
+            const price = product.querySelector('.price').innerText;
+
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+            modalTitle.innerText = title;
+            modalDescription.innerText = description;
+            modalPrice.innerText = price;
+        });
+    });
+
+    closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Ensure modal is hidden and empty on load
+    modal.style.display = 'none';
+    modalImg.src = '';
+    modalTitle.innerText = '';
+    modalDescription.innerText = '';
+    modalPrice.innerText = '';
 });
