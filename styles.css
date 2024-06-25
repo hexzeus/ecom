@@ -283,23 +283,6 @@ p {
 }
 
 /* Responsive Design */
-@media (min-width: 600px) {
-    .products-container {
-        flex-direction: row;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    .product-wrapper {
-        width: 200px;
-    }
-
-    .modal-content {
-        width: 90%;
-        max-width: 500px;
-    }
-}
-
 @media (max-width: 599px) {
     .products-container {
         flex-direction: column;
@@ -315,11 +298,31 @@ p {
 
     .modal-content {
         width: 90%;
-        max-width: 500px;
+        max-width: 300px;
+        /* Smaller width on mobile */
+        padding: 15px;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) and (max-width: 1023px) {
+    .products-container {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .product-wrapper {
+        width: 200px;
+    }
+
+    .modal-content {
+        width: 80%;
+        max-width: 500px;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
     .products-container {
         justify-content: center;
     }
@@ -330,7 +333,7 @@ p {
 
     .modal-content {
         width: 80%;
-        max-width: 600px;
+        max-width: 500px;
     }
 }
 
@@ -346,6 +349,7 @@ p {
     .modal-content {
         width: 70%;
         max-width: 700px;
+        padding: 20px 40px;
     }
 }
 
