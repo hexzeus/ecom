@@ -14,77 +14,13 @@ body {
     flex-direction: column;
 }
 
-/* Navbar Styles */
-.navbar {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-}
-
-.brand-name {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffffff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.nav-item {
-    position: relative;
-    font-size: 1.2em;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.nav-item .dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    min-width: 150px;
-}
-
-.nav-item:hover .dropdown {
-    display: block;
-}
-
-.dropdown a {
-    display: block;
-    padding: 10px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.dropdown a:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
 /* Products Carousel */
 #products {
     position: relative;
     z-index: 2;
     width: 100%;
     max-width: 1200px;
-    padding: 100px 0 40px;
-    margin-top: 80px;
+    padding: 40px 0;
 }
 
 .products-container {
