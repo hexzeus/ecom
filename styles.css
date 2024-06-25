@@ -172,10 +172,31 @@ body {
 @media (min-width: 600px) {
     .products-container {
         flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 
     .product-wrapper {
         width: 200px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 599px) {
+    .products-container {
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100vh;
+    }
+
+    .product-wrapper {
+        width: 90%;
+        margin: 10px auto;
     }
 
     .modal-content {

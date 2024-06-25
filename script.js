@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const productsContainer = document.querySelector('.products-container');
     const products = Array.from(document.querySelectorAll('.product'));
     let totalWidth = 0;
+    let totalHeight = 0;
 
+    // Calculate total width and height for horizontal and vertical scrolling
     products.forEach(product => {
         totalWidth += product.offsetWidth + 20; // Include margin
+        totalHeight += product.offsetHeight + 20; // Include margin
     });
 
     // Clone products to make the scroll seamless
@@ -22,11 +25,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let scrollSpeed = 1; // Control the speed of scrolling
 
     function scrollProducts() {
-        scrollPosition += scrollSpeed;
-        productsContainer.scrollLeft = scrollPosition;
+        if (window.innerWidth >= 600) {
+            scrollPosition += scrollSpeed;
+            productsContainer.scrollLeft = scrollPosition;
 
-        if (scrollPosition >= totalWidth) {
-            scrollPosition = 0; // Reset scroll position to the beginning
+            if (scrollPosition >= totalWidth) {
+                scrollPosition = 0; // Reset scroll position to the beginning
+            }
+        } else {
+            scrollPosition += scrollSpeed;
+            productsContainer.scrollTop = scrollPosition;
+
+            if (scrollPosition >= totalHeight) {
+                scrollPosition = 0; // Reset scroll position to the beginning
+            }
         }
 
         requestAnimationFrame(scrollProducts);
@@ -34,14 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     scrollProducts();
 
-    // Pause scrolling on hover
-    productsContainer.addEventListener('mouseover', () => {
-        scrollSpeed = 0;
-    });
+    // Pause scrolling on hover for horizontal scrolling
+    if (window.innerWidth >= 600) {
+        productsContainer.addEventListener('mouseover', () => {
+            scrollSpeed = 0;
+        });
 
-    productsContainer.addEventListener('mouseout', () => {
-        scrollSpeed = 1;
-    });
+        productsContainer.addEventListener('mouseout', () => {
+            scrollSpeed = 1;
+        });
+    }
 
     // Ensure smooth scrolling on user interaction
     productsContainer.addEventListener('wheel', (evt) => {
@@ -51,13 +65,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Touch events for mobile scrolling
     let isDragging = false;
-    let startX;
-    let scrollLeft;
+    let startX, startY;
+    let scrollLeft, scrollTop;
 
     productsContainer.addEventListener('touchstart', (e) => {
         isDragging = true;
         startX = e.touches[0].pageX - productsContainer.offsetLeft;
+        startY = e.touches[0].pageY - productsContainer.offsetTop;
         scrollLeft = productsContainer.scrollLeft;
+        scrollTop = productsContainer.scrollTop;
         scrollSpeed = 0; // Stop the automatic scroll when user starts dragging
     });
 
@@ -65,9 +81,17 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!isDragging) return;
         e.preventDefault();
         const x = e.touches[0].pageX - productsContainer.offsetLeft;
-        const walk = (x - startX) * 2; // Adjust the scroll speed
-        productsContainer.scrollLeft = scrollLeft - walk;
-        scrollPosition = productsContainer.scrollLeft; // Update scroll position
+        const y = e.touches[0].pageY - productsContainer.offsetTop;
+        const walkX = (x - startX) * 2; // Adjust the scroll speed
+        const walkY = (y - startY) * 2; // Adjust the scroll speed
+
+        if (window.innerWidth >= 600) {
+            productsContainer.scrollLeft = scrollLeft - walkX;
+            scrollPosition = productsContainer.scrollLeft; // Update scroll position
+        } else {
+            productsContainer.scrollTop = scrollTop - walkY;
+            scrollPosition = productsContainer.scrollTop; // Update scroll position
+        }
     });
 
     productsContainer.addEventListener('touchend', () => {
