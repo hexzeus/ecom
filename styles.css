@@ -9,57 +9,13 @@ body {
     /* Buffalo Bills Blue */
     line-height: 1.6;
     overflow-x: hidden;
-}
-
-/* Navigation Bar */
-nav {
-    background-color: #00338D;
-    /* Buffalo Bills Blue */
-    color: #fff;
-    padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* Center horizontally */
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav .logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #C60C30;
-    /* Buffalo Bills Red */
-}
-
-/* Section */
-section {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Roboto', sans-serif;
-    color: #00338D;
-    /* Buffalo Bills Blue */
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    /* Center vertically */
+    height: 100vh;
+    /* Full viewport height */
 }
 
 /* Products Carousel */
@@ -69,7 +25,12 @@ h3 {
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     position: relative;
-    width: 100%;
+    max-width: 1200px;
+    /* Set maximum width */
+    justify-content: center;
+    /* Center the carousel horizontally */
+    align-items: center;
+    /* Center the items vertically */
 }
 
 .product {
@@ -116,14 +77,14 @@ h3 {
 
 /* Responsive Design */
 @media (min-width: 600px) {
-    nav ul {
+    .products-container {
         flex-direction: row;
     }
 }
 
 @media (min-width: 768px) {
-    nav .logo {
-        font-size: 2em;
+    .products-container {
+        justify-content: center;
     }
 }
 
