@@ -169,7 +169,7 @@ p {
     height: auto;
     object-fit: cover;
     display: block;
-    margin: 20px auto;
+    margin: 0 auto 20px auto;
     border-radius: 20px;
     border: 2px solid #555555;
     /* Mid-tone grey for borders */
@@ -210,9 +210,8 @@ p {
     color: #f5f5f5;
     /* Light grey color for close button */
     position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 20px;
+    right: 20px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -305,8 +304,9 @@ p {
     }
 
     .close {
+        top: 10px;
+        right: 10px;
         font-size: 24px;
-        top: -10px;
     }
 }
 
