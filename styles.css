@@ -32,20 +32,24 @@ body {
 
 .product {
     display: inline-block;
+    flex-shrink: 0;
+    margin: 0 10px;
+}
+
+.product-wrapper {
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    margin: 0 10px;
     width: 250px;
     border: 2px solid #00338D;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #00338D;
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .product img {
@@ -53,13 +57,9 @@ body {
     height: 200px;
     object-fit: cover;
     display: block;
-    margin: 0 auto 10px auto;
-    border-radius: 10px;
-    border: 5px solid #ffffff;
-    /* White border for a clean, professional look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
+    margin: 0;
     cursor: pointer;
+    border-bottom: 2px solid #00338D;
 }
 
 .product h3,
@@ -72,21 +72,14 @@ body {
     font-weight: bold;
     color: #ffffff;
     background-color: #00338D;
-    border-radius: 10px;
     text-align: center;
-    padding: 5px 10px;
-    margin: 10px auto 0 auto;
-    display: inline-block;
-    width: 80px;
-    transition: background-color 0.3s;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+    border-top: 2px solid #00338D;
 }
 
-.product .price:hover {
-    background-color: #C60C30;
-    cursor: pointer;
-}
-
-.product:hover {
+.product:hover .product-wrapper {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
@@ -130,11 +123,8 @@ body {
     object-fit: cover;
     display: block;
     margin: 0 auto 20px auto;
-    border-radius: 10px;
-    border: 5px solid #ffffff;
-    /* White border for a clean, professional look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
+    border-radius: 20px;
+    border: 3px solid #C60C30;
 }
 
 .modal-content h3 {
@@ -179,7 +169,7 @@ body {
         flex-direction: row;
     }
 
-    .product {
+    .product-wrapper {
         width: 200px;
     }
 
@@ -194,7 +184,7 @@ body {
         justify-content: center;
     }
 
-    .product {
+    .product-wrapper {
         width: 250px;
     }
 
@@ -209,7 +199,7 @@ body {
         justify-content: center;
     }
 
-    .product {
+    .product-wrapper {
         width: 300px;
     }
 
