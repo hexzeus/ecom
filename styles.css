@@ -122,8 +122,9 @@ body {
 }
 
 .modal-content img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
     object-fit: cover;
     display: block;
     margin: 0 auto 20px auto;
