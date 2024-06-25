@@ -38,7 +38,6 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     margin: 0 10px;
     width: 250px;
-    /* Adjust width for smaller screens */
     border: 2px solid #00338D;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #00338D;
@@ -59,32 +58,9 @@ body {
     cursor: pointer;
 }
 
-.product-content {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
-.product h3 {
-    margin: 10px 0;
-    font-size: 1.4em;
-    color: #C60C30;
-    text-align: center;
-}
-
+.product h3,
 .product .description {
-    font-size: 1em;
-    margin-bottom: 10px;
-    color: #555555;
-    line-height: 1.4;
-    text-align: left;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    display: none;
 }
 
 .product .price {
@@ -115,7 +91,6 @@ body {
     align-items: center;
     display: flex;
     backdrop-filter: blur(5px);
-    /* Add a blur effect for a luxurious touch */
 }
 
 .modal-content {
@@ -123,16 +98,12 @@ body {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #00338D;
-    /* Buffalo Bills Blue */
     width: 80%;
     max-width: 500px;
-    /* Increased width for a better view */
     border-radius: 15px;
-    /* Slightly more rounded corners for a modern look */
     text-align: center;
     color: #00338D;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    /* Deeper shadow for depth */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,14 +117,12 @@ body {
     margin: 0 auto 20px auto;
     border-radius: 15px;
     border: 2px solid #C60C30;
-    /* Buffalo Bills Red */
 }
 
 .modal-content h3 {
     font-size: 1.8em;
     margin-bottom: 10px;
     color: #C60C30;
-    /* Buffalo Bills Red */
 }
 
 .modal-content p {
@@ -167,7 +136,6 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     color: #00338D;
-    /* Buffalo Bills Blue */
     margin-bottom: 20px;
 }
 
@@ -184,7 +152,6 @@ body {
 .close:hover,
 .close:focus {
     color: #C60C30;
-    /* Buffalo Bills Red */
     text-decoration: none;
 }
 
@@ -196,13 +163,11 @@ body {
 
     .product {
         width: 200px;
-        /* Smaller width for mobile screens */
     }
 
     .modal-content {
         width: 90%;
         max-width: 400px;
-        /* Smaller width for mobile screens */
     }
 }
 
@@ -213,13 +178,11 @@ body {
 
     .product {
         width: 250px;
-        /* Medium width for tablets */
     }
 
     .modal-content {
         width: 80%;
         max-width: 500px;
-        /* Medium width for tablets */
     }
 }
 
@@ -230,12 +193,10 @@ body {
 
     .product {
         width: 300px;
-        /* Original width for larger screens */
     }
 
     .modal-content {
         width: 70%;
         max-width: 600px;
-        /* Original width for larger screens */
     }
 }

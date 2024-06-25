@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Carousel Scrolling Functionality
     const productsContainer = document.querySelector('.products-container');
     const products = Array.from(document.querySelectorAll('.product'));
     let totalWidth = 0;
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     let scrollPosition = 0;
-    const scrollSpeed = 1; // Control the speed of scrolling
+    let scrollSpeed = 1; // Control the speed of scrolling
 
     function scrollProducts() {
         scrollPosition += scrollSpeed;
