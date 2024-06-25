@@ -3,10 +3,9 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #00338D;
-    /* Buffalo Bills Blue */
+    background: linear-gradient(135deg, #00338D 25%, #C60C30 75%);
+    color: #ffffff;
+    /* White text for contrast */
     line-height: 1.6;
     overflow-x: hidden;
     display: flex;
@@ -19,6 +18,11 @@ body {
 }
 
 /* Products Carousel */
+#products {
+    position: relative;
+    z-index: 2;
+}
+
 .products-container {
     display: flex;
     overflow-x: hidden;
@@ -35,7 +39,8 @@ body {
 
 .product {
     display: inline-block;
-    background-color: #fff;
+    background-color: #ffffff;
+    /* White background for contrast */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
