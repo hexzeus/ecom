@@ -5,96 +5,117 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0d0d0d 25%, #1a1a1a 75%);
-    color: #e0e0e0;
+    background: #f7f7f7;
+    color: #333;
     line-height: 1.6;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    height: 100vh;
 }
 
-/* Hero Section */
-#hero {
+/* Navigation Bar Styles */
+.navbar {
     width: 100%;
-    padding: 50px 0;
-    background: linear-gradient(135deg, #1a1a1a, #333333);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-.hero-content {
+.navbar-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
-.logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.brand-name {
+.navbar-logo {
     font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    margin-left: 20px;
+}
+
+.navbar-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-link:hover {
     color: #d4af37;
-    font-size: 2.5em;
-    margin: 10px 0;
 }
 
-.brand-tagline {
-    font-size: 1.2em;
-    color: #e0e0e0;
-    margin-bottom: 20px;
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
-/* Responsive Adjustments */
-@media (min-width: 768px) {
-    .logo {
-        width: 150px;
-    }
-
-    .brand-name {
-        font-size: 3em;
-    }
-
-    .brand-tagline {
-        font-size: 1.5em;
-    }
+.navbar-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: all 0.3s;
 }
 
-@media (min-width: 1024px) {
-    .logo {
-        width: 200px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.3s;
     }
 
-    .brand-name {
-        font-size: 3.5em;
+    .navbar-menu.active {
+        left: 0;
     }
 
-    .brand-tagline {
-        font-size: 1.8em;
+    .navbar-item {
+        margin: 15px 0;
+    }
+
+    .navbar-toggle {
+        display: flex;
     }
 }
 
 /* Luxury Styling for Links */
 a {
-    color: #d4af37;
+    color: #b58900;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s, text-decoration 0.3s;
 }
 
 a:hover {
-    color: #f5f5f5;
+    color: #d4af37;
     text-decoration: underline;
 }
 
@@ -102,7 +123,7 @@ a:hover {
 p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #c0c0c0;
+    color: #666;
     font-style: italic;
     letter-spacing: 0.5px;
 }
@@ -132,12 +153,12 @@ p {
 }
 
 .product-wrapper {
-    background-color: #1a1a1a;
+    background-color: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     width: 250px;
-    border: 1px solid #555555;
+    border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -154,13 +175,13 @@ p {
     margin: 0 0 20px 0;
     cursor: pointer;
     border-radius: 10px;
-    border: 2px solid #d4af37;
+    border: 2px solid #b58900;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product img:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product h3,
@@ -171,8 +192,8 @@ p {
 .price {
     font-size: 1.4em;
     font-weight: bold;
-    color: #d4af37;
-    background-color: #555555;
+    color: #b58900;
+    background-color: #f1f1f1;
     text-align: center;
     padding: 10px 0;
     margin: 20px 0 0 0;
@@ -183,8 +204,8 @@ p {
 
 .product:hover .product-wrapper {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
-    background-color: #2a2a2a;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
 }
 
 /* Luxury Font for Headings */
@@ -192,22 +213,22 @@ h1,
 h2,
 h3 {
     font-family: 'Playfair Display', serif;
-    color: #d4af37;
+    color: #b58900;
     letter-spacing: 1px;
 }
 
 /* Animation for Product Hover */
 @keyframes luxury-glow {
     0% {
-        box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+        box-shadow: 0 0 10px rgba(181, 137, 0, 0.7);
     }
 
     50% {
-        box-shadow: 0 0 20px rgba(255, 204, 0, 1);
+        box-shadow: 0 0 20px rgba(181, 137, 0, 1);
     }
 
     100% {
-        box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+        box-shadow: 0 0 10px rgba(181, 137, 0, 0.7);
     }
 }
 
@@ -225,36 +246,30 @@ h3 {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgba(30, 30, 30, 0.9);
-    /* Darker black with transparency */
+    background-color: rgba(30, 30, 30, 0.8);
     justify-content: center;
     align-items: center;
     display: flex;
     backdrop-filter: blur(10px);
-    /* Slightly stronger blur for a more premium feel */
 }
 
 .modal-content {
-    background-color: #222222;
-    /* Deep black */
+    background-color: #ffffff;
     margin: 5% auto;
     padding: 20px;
-    border: 2px solid #555555;
-    /* Mid-tone grey for borders */
+    border: 2px solid #ccc;
     width: 90%;
     max-width: 400px;
     border-radius: 20px;
     text-align: center;
-    color: #f5f5f5;
-    /* Light grey color for text */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+    color: #333;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     max-height: 80vh;
     overflow-y: auto;
     position: relative;
-    /* Ensure close button is positioned correctly */
 }
 
 .modal-content img {
@@ -265,34 +280,28 @@ h3 {
     display: block;
     margin: 0 auto 20px auto;
     border-radius: 20px;
-    border: 2px solid #555555;
-    /* Mid-tone grey for borders */
+    border: 2px solid #ccc;
 }
 
 .modal-content h3 {
     font-size: 1.8em;
-    /* Slightly larger font for headings */
     margin-bottom: 10px;
-    color: #ffcc00;
-    /* Rich gold color for headings */
+    color: #b58900;
 }
 
 .modal-content p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #bfbfbf;
-    /* Light grey for a softer look */
+    color: #666;
     text-align: left;
     font-style: italic;
-    /* Adds a touch of elegance */
     letter-spacing: 0.5px;
 }
 
 .modal-content .price {
     font-size: 1.4em;
     font-weight: bold;
-    color: #ffcc00;
-    /* Rich gold color for price */
+    color: #b58900;
     margin-bottom: 20px;
     background-color: transparent;
     width: auto;
@@ -301,8 +310,7 @@ h3 {
 }
 
 .close {
-    color: #f5f5f5;
-    /* Light grey color for close button */
+    color: #333;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -314,8 +322,7 @@ h3 {
 
 .close:hover,
 .close:focus {
-    color: #ffcc00;
-    /* Rich gold color on hover for the close button */
+    color: #b58900;
     text-decoration: none;
 }
 
@@ -338,16 +345,14 @@ h3 {
 
 .phone a,
 .email a {
-    color: #ffcc00;
-    /* Rich gold color for links */
+    color: #b58900;
     text-decoration: none;
     transition: color 0.3s, text-decoration 0.3s;
 }
 
 .phone a:hover,
 .email a:hover {
-    color: #f5f5f5;
-    /* Light grey color on hover */
+    color: #333;
     text-decoration: underline;
 }
 
@@ -360,20 +365,16 @@ h3 {
 .social-link {
     display: inline-block;
     padding: 10px 20px;
-    color: #f5f5f5;
-    /* Light grey color for social links */
-    background-color: #555555;
-    /* Mid-tone grey for background */
+    color: #ffffff;
+    background-color: #b58900;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .social-link:hover {
-    background-color: #ffcc00;
-    /* Rich gold color on hover */
-    color: #222222;
-    /* Deep black for text on hover */
+    background-color: #ffffff;
+    color: #b58900;
 }
 
 /* Responsive Design */
@@ -393,7 +394,6 @@ h3 {
     .modal-content {
         width: 90%;
         max-width: 300px;
-        /* Smaller width on mobile */
         padding: 15px;
     }
 
