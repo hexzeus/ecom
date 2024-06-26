@@ -1,12 +1,12 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap');
+
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #1a1a1a 25%, #333333 75%);
-    /* Deep black gradient */
-    color: #f5f5f5;
-    /* Light grey color for text */
+    background: linear-gradient(135deg, #0d0d0d 25%, #1a1a1a 75%);
+    color: #e0e0e0;
     line-height: 1.6;
     overflow-x: hidden;
     display: flex;
@@ -14,12 +14,80 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Section */
+#hero {
+    width: 100%;
+    padding: 50px 0;
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    color: #d4af37;
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+.brand-tagline {
+    font-size: 1.2em;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .logo {
+        width: 150px;
+    }
+
+    .brand-name {
+        font-size: 3em;
+    }
+
+    .brand-tagline {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        width: 200px;
+    }
+
+    .brand-name {
+        font-size: 3.5em;
+    }
+
+    .brand-tagline {
+        font-size: 1.8em;
+    }
 }
 
 /* Luxury Styling for Links */
 a {
-    color: #ffcc00;
-    /* Rich gold color for luxury */
+    color: #d4af37;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s, text-decoration 0.3s;
@@ -27,7 +95,6 @@ a {
 
 a:hover {
     color: #f5f5f5;
-    /* Light grey color on hover */
     text-decoration: underline;
 }
 
@@ -35,12 +102,9 @@ a:hover {
 p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #bfbfbf;
-    /* Light grey for a softer look */
+    color: #c0c0c0;
     font-style: italic;
-    /* Adds a touch of elegance */
     letter-spacing: 0.5px;
-    /* Slight letter spacing for a refined look */
 }
 
 /* Products Carousel */
@@ -68,14 +132,12 @@ p {
 }
 
 .product-wrapper {
-    background-color: #222222;
-    /* Deep black */
+    background-color: #1a1a1a;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     width: 250px;
     border: 1px solid #555555;
-    /* Mid-tone grey for borders */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -92,16 +154,13 @@ p {
     margin: 0 0 20px 0;
     cursor: pointer;
     border-radius: 10px;
-
-    /* Bright gold border to make the image stand out */
+    border: 2px solid #d4af37;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product img:hover {
     transform: scale(1.05);
-    /* Slight zoom on hover */
     box-shadow: 0 4px 8px rgba(255, 204, 0, 0.5);
-    /* Soft gold glow on hover */
 }
 
 .product h3,
@@ -112,10 +171,8 @@ p {
 .price {
     font-size: 1.4em;
     font-weight: bold;
-    color: #ffcc00;
-    /* Rich gold color for price */
+    color: #d4af37;
     background-color: #555555;
-    /* Mid-tone grey */
     text-align: center;
     padding: 10px 0;
     margin: 20px 0 0 0;
@@ -127,8 +184,35 @@ p {
 .product:hover .product-wrapper {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
-    background-color: #333333;
-    /* Slightly lighter background on hover */
+    background-color: #2a2a2a;
+}
+
+/* Luxury Font for Headings */
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+
+/* Animation for Product Hover */
+@keyframes luxury-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 204, 0, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+    }
+}
+
+.product img:hover {
+    animation: luxury-glow 1.5s infinite alternate;
 }
 
 /* Modal Styles */
