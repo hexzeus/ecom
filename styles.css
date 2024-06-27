@@ -300,6 +300,9 @@ h3 {
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    /* Allow vertical scrolling */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
     position: relative;
 }
 

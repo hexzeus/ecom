@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Modal Functionality
     const modal = document.getElementById('product-modal');
+    const modalContent = document.querySelector('.modal-content');
     const modalImg = document.getElementById('modal-img');
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
@@ -117,6 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
         modalTitle.innerText = title;
         modalDescription.innerText = description;
         modalPrice.innerText = price;
+
+        // Scroll to top when the modal opens
+        modalContent.scrollTop = 0;
     }
 
     document.querySelectorAll('.product-img, .price').forEach(element => {
