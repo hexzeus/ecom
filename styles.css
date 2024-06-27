@@ -250,6 +250,8 @@ h3 {
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
+    /* Ensures close button is below modal content */
     backdrop-filter: blur(10px);
 }
 
@@ -282,7 +284,6 @@ h3 {
     margin: 0 auto 10px auto;
     border-radius: 10px;
     border: 1px solid #ccc;
-    margin-top: 50px;
 }
 
 .modal-content h3 {
@@ -312,25 +313,17 @@ h3 {
 }
 
 .close {
-    color: #ffffff;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 16px;
+    color: #000;
+    font-size: 1.5em;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    background-color: #b58900;
-    padding: 10px 20px;
-    border-radius: 20px;
+    transition: color 0.3s;
+    margin-top: 20px;
 }
 
 .close:hover,
 .close:focus {
-    background-color: #ffffff;
     color: #b58900;
-    text-decoration: none;
 }
 
 /* Contact Details Styling */
@@ -407,10 +400,7 @@ h3 {
     }
 
     .close {
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        font-size: 16px;
+        font-size: 1.2em;
     }
 }
 
@@ -434,10 +424,7 @@ h3 {
     }
 
     .close {
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        font-size: 20px;
+        font-size: 1.3em;
     }
 }
 
