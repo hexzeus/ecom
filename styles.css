@@ -5,24 +5,21 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: #ffffff;
-    /* Clean, light background */
-    color: #333333;
-    /* Dark text color for contrast */
+    background: #f7f7f7;
+    color: #333;
     line-height: 1.6;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Navigation Bar Styles */
 .navbar {
     width: 100%;
-    background-color: #f8f9fa;
-    /* Light navbar background */
+    background-color: #ffffff;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -42,9 +39,8 @@ body {
 
 .navbar-logo {
     font-family: 'Playfair Display', serif;
-    color: #333333;
-    font-size: 2em;
-    /* Larger logo for emphasis */
+    color: #333;
+    font-size: 1.8em;
     text-decoration: none;
 }
 
@@ -60,16 +56,14 @@ body {
 }
 
 .navbar-link {
-    color: #333333;
-    /* Dark text color for contrast */
+    color: #333;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .navbar-link:hover {
-    color: #007bff;
-    /* Blue hover color */
+    color: #d4af37;
 }
 
 .navbar-toggle {
@@ -81,8 +75,7 @@ body {
 .navbar-toggle .bar {
     height: 3px;
     width: 25px;
-    background-color: #333333;
-    /* Dark color for toggle */
+    background-color: #333;
     margin: 4px 0;
     transition: all 0.3s;
 }
@@ -94,7 +87,7 @@ body {
         top: 60px;
         left: -100%;
         width: 100%;
-        background-color: #f8f9fa;
+        background-color: #ffffff;
         flex-direction: column;
         align-items: center;
         transition: all 0.3s;
@@ -113,20 +106,119 @@ body {
     }
 }
 
+/* About Section */
+.about-section {
+    background-color: #f8f9fa;
+    color: #333333;
+    padding: 80px 20px 60px;
+    /* Adjusted for navbar height */
+    text-align: center;
+}
+
+.about-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.2s ease-in-out;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.about-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.about-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.about-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Section Styles */
 .section {
     padding: 60px 20px;
     text-align: center;
 }
 
+/* Hero Section */
 .home-section {
-    background: url('images/logo.png') no-repeat center center/cover;
-    color: #ffffff;
+    position: relative;
+    width: 100%;
     height: 100vh;
+    background: url('images/home-background.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #ffffff;
+    text-align: center;
+}
+
+.home-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .home-section h1 {
@@ -140,6 +232,19 @@ body {
     margin-bottom: 40px;
 }
 
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.2s ease-in-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
 .btn-primary {
     background-color: #007bff;
     color: #ffffff;
@@ -148,6 +253,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
+    animation: fadeInUp 1.2s ease-in-out;
 }
 
 .btn-primary:hover {
@@ -155,30 +261,29 @@ body {
     color: #ffffff;
 }
 
-.about-section {
-    background-color: #f8f9fa;
-    /* Light grey background */
-    color: #333333;
-    min-height: 100vh;
-    /* Ensure full height on mobile */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+/* Keyframes for Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.about-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
-.about-section p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .products-section {
