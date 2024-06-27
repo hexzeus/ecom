@@ -550,58 +550,6 @@ h3 {
     animation: luxury-glow 1.5s infinite alternate;
 }
 
-.price {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #007bff;
-    /* Blue text color */
-    background-color: #f1f1f1;
-    /* Light background */
-    text-align: center;
-    padding: 10px 0;
-    margin: 20px 0 0 0;
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.product:hover .product-wrapper {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    /* Soft shadow */
-    background-color: #fafafa;
-    /* Slightly darker background on hover */
-}
-
-/* Luxury Font for Headings */
-h1,
-h2,
-h3 {
-    font-family: 'Playfair Display', serif;
-    color: #007bff;
-    /* Blue text color */
-    letter-spacing: 1px;
-}
-
-/* Animation for Product Hover */
-@keyframes luxury-glow {
-    0% {
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
-    }
-
-    50% {
-        box-shadow: 0 0 20px rgba(0, 123, 255, 1);
-    }
-
-    100% {
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
-    }
-}
-
-.product img:hover {
-    animation: luxury-glow 1.5s infinite alternate;
-}
-
 /* Modal Styles */
 .modal {
     display: none;
