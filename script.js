@@ -146,13 +146,34 @@ document.addEventListener('DOMContentLoaded', function () {
     modalTitle.innerText = '';
     modalDescription.innerText = '';
     modalPrice.innerText = '';
-});
 
-document.addEventListener('DOMContentLoaded', function () {
+    // Navbar Functionality
     const toggleButton = document.querySelector('.navbar-toggle');
     const navbarMenu = document.querySelector('.navbar-menu');
 
     toggleButton.addEventListener('click', () => {
         navbarMenu.classList.toggle('active');
+    });
+
+    // Close navbar when clicking outside
+    document.addEventListener('click', (event) => {
+        const isClickInside = navbarMenu.contains(event.target) || toggleButton.contains(event.target);
+        if (!isClickInside) {
+            navbarMenu.classList.remove('active');
+        }
+    });
+
+    // Scroll to sections smoothly
+    document.querySelectorAll('.navbar-link').forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+            navbarMenu.classList.remove('active'); // Close navbar after clicking
+        });
     });
 });
