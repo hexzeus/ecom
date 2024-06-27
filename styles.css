@@ -311,18 +311,22 @@ h3 {
 }
 
 .close {
-    color: #333;
+    color: #ffffff;
     position: absolute;
     top: 5px;
     right: 5px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #b58900;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .close:hover,
 .close:focus {
+    background-color: #ffffff;
     color: #b58900;
     text-decoration: none;
 }
