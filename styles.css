@@ -387,24 +387,24 @@ h3 {
     }
 
     .product-wrapper {
-        width: 80%;
-        margin: 5px auto;
+        width: 90%;
+        margin: 10px auto;
     }
 
     .modal-content {
         width: 90%;
-        max-width: 280px;
-        padding: 10px;
+        max-width: 300px;
+        padding: 15px;
     }
 
     .close {
-        top: 5px;
-        right: 5px;
-        font-size: 18px;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
     }
 }
 
-@media (min-width: 600px) and (max-width: 767px) {
+@media (min-width: 600px) and (max-width: 1023px) {
     .products-container {
         flex-direction: row;
         overflow-x: auto;
@@ -412,19 +412,13 @@ h3 {
     }
 
     .product-wrapper {
-        width: 180px;
+        width: 200px;
     }
 
     .modal-content {
         width: 80%;
-        max-width: 450px;
-        padding: 15px;
-    }
-
-    .close {
-        top: 10px;
-        right: 10px;
-        font-size: 20px;
+        max-width: 500px;
+        padding: 20px;
     }
 }
 
@@ -434,7 +428,7 @@ h3 {
     }
 
     .product-wrapper {
-        width: 220px;
+        width: 250px;
     }
 
     .modal-content {
